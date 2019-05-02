@@ -8,21 +8,21 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 import com.example.datastorage.R
-import com.example.datastorage.Modelos.User
+import com.example.datastorage.Modelos.Movie
 
-class UsersListAdapter(private val activity: Activity, usersList: List<User>?) : BaseAdapter(){
-    private var usersList = ArrayList<User>()
+class UsersListAdapter(private val activity: Activity, movieList: List<Movie>?) : BaseAdapter(){
+    private var movieList = ArrayList<Movie>()
 
     init {
-        this.usersList = usersList as ArrayList<User>
+        this.movieList = movieList as ArrayList<Movie>
     }
 
     override fun getCount(): Int {
-        return usersList.size
+        return movieList.size
     }
 
     override fun getItem(i: Int): Any {
-        return usersList[i]
+        return movieList[i]
     }
 
     override fun getItemId(i: Int): Long {
@@ -30,7 +30,7 @@ class UsersListAdapter(private val activity: Activity, usersList: List<User>?) :
     }
 
     fun getName(i: Int): String? {
-        return usersList[i].name
+        return movieList[i].nameMovie
     }
 
     override fun getView(i: Int, convertView: View?, viewGroup: ViewGroup): View {
@@ -38,9 +38,9 @@ class UsersListAdapter(private val activity: Activity, usersList: List<User>?) :
         val inflater = activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         vi = inflater.inflate(R.layout.row_item, null)
         val nombre = vi.findViewById<TextView>(R.id.Nombre)
-        val edad = vi.findViewById<TextView>(R.id.Edad)
-        nombre.text = usersList[i].name
-        edad.text = usersList[i].age.toString()
+        val director = vi.findViewById<TextView>(R.id.Edad)
+        nombre.text = movieList[i].nameMovie
+        director.text = movieList[i].director.toString()
         return vi
     }
 }

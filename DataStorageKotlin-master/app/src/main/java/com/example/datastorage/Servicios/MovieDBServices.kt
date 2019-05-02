@@ -29,16 +29,16 @@ class MovieDBServices(context: Context) : SQLiteOpenHelper(context, "MovieDBServ
             TODO("Sin implementación")
         }
 
-        override fun saveMovie(user: Movie)
+        override fun saveMovie(movie: Movie)
         {
             var localUser = ContentValues()
-            localUser.put("nombre", user.nameMovie)//puede que falte id pelicula
-            localUser.put("duracion", user.duration)
-            localUser.put("synopsis", user.synopsis)
-            localUser.put("genero", user.gender)
-            localUser.put("anio", user.year)
-            localUser.put("director", user.director)
-            localUser.put("score", user.score)
+            localUser.put("nombre", movie.nameMovie)//puede que falte id pelicula
+            localUser.put("duracion", movie.duration)
+            localUser.put("synopsis", movie.synopsis)
+            localUser.put("genero", movie.gender)
+            localUser.put("anio", movie.year)
+            localUser.put("director", movie.director)
+            localUser.put("score", movie.score)
             this.executeModification(localUser)
         }
 
@@ -81,10 +81,10 @@ class MovieDBServices(context: Context) : SQLiteOpenHelper(context, "MovieDBServ
             return consulta
         }
 
-        private fun executeModification(user: ContentValues)
+        private fun executeModification(movie: ContentValues)
         {
             val bd = this.writableDatabase
-            bd.insert("movies", null, user)
+            bd.insert("movies", null, movie)
             bd.close()
         }
 }

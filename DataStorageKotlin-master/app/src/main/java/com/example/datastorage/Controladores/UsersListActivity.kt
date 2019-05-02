@@ -8,10 +8,9 @@ import android.widget.AdapterView
 import android.widget.ListView
 import android.widget.Toast
 import com.example.datastorage.Adapters.UsersListAdapter
-import com.example.datastorage.Modelos.User
+import com.example.datastorage.Modelos.Movie
 import com.example.datastorage.R
-import com.example.datastorage.Servicios.UserDBServices
-
+import com.example.datastorage.Servicios.MovieDBServices
 
 class UsersListActivity : AppCompatActivity()
 {
@@ -21,7 +20,7 @@ class UsersListActivity : AppCompatActivity()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_users_list)
 
-        val listPosts: List<User>? = UserDBServices(this).consultUsers()
+        val listPosts: List<Movie>? = MovieDBServices(this).consultMovies()
         listView = findViewById<ListView>(R.id.listUsers) as ListView
         val adapter = UsersListAdapter(this, listPosts)
         listView.adapter = adapter
@@ -30,18 +29,19 @@ class UsersListActivity : AppCompatActivity()
         listView.setOnItemClickListener { adapterView, view, i, l ->
             Toast.makeText(this, "Item Clicked " + adapter.getName(i),Toast.LENGTH_SHORT).show()
 
-            val profileIntent = Intent(this, ProfileActivity::class.java)
-            var userToShow = listPosts?.get(adapter.getItemId(i).toInt())
+            //val profileIntent = Intent(this, ProfileActivity::class.java)
+            //var movieToShow = listPosts?.get(adapter.getItemId(i).toInt())
 
+/*
             if (userToShow != null) {
+
                 profileIntent.putExtra(ProfileActivity.USER_NAME_SHOW, userToShow.name)
                 profileIntent.putExtra(ProfileActivity.USER_EMAIL_SHOW, userToShow.email)
                 profileIntent.putExtra(ProfileActivity.USER_AGE_SHOW, userToShow.age)
 
                 profileIntent.putExtra(ProfileActivity.USER_AGE_SHOW, userToShow.imagen)
             }
-            startActivity(profileIntent)
-            finish()
+            startActivity(profileIntent)*/
         }
     }
 }
