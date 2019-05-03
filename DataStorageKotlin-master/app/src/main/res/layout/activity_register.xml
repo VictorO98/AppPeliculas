@@ -10,6 +10,9 @@
 
     <Button
             android:text="FOTO"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorPrimary"
+            android:background="@drawable/rounder_corner_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/galleryfoto" android:layout_marginTop="8dp"

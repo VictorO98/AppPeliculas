@@ -17,12 +17,15 @@ class MainActivity : AppCompatActivity()
 {
     private lateinit var loginServices : LoginServices
 
-    override fun onCreate(savedInstanceState: Bundle?)
-    {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        loginServices= LoginServices(this)
-        val user = User(null, "jeison", "jeison@gmail.com", 35, "secret",null)
+        loginServices = LoginServices(this)
+        val movie = Movie(null, "Iron Man", "126", "Un empresario millonario construye un traje blindado y lo usa para combatir el crimen y el terrorismo" ,
+            "Accion", 2008, "Jon Favreau", 5)
+        MovieDBServices(this).saveMovie(movie)
+
+        /*val user = User(null, "jeison", "jeison@gmail.com", 35, "secret",null)
         UserDBServices(this).saveUser(user) //Código Test*/
         /*val user = User(null, "Leo", "leo@gmail.com", 35, "secret")
         val user2 = User(null, "Jose", "leonardo@hotmail.com", 25, "3")
@@ -31,10 +34,6 @@ class MainActivity : AppCompatActivity()
         UserDBServices(this).saveUser(user) //Código Test
         UserDBServices(this).saveUser(user2) //Código Test
         UserDBServices(this).saveUser(user3) //Código Test*/
-
-        val movie = Movie(null, "Iron Man", "126", "Un empresario millonario construye un traje blindado y lo usa para combatir el crimen y el terrorismo" ,
-            "Accion", 2008, "Jon Favreau", 5)
-        MovieDBServices(this).saveMovie(movie)
     }
 
     fun login(view: View)

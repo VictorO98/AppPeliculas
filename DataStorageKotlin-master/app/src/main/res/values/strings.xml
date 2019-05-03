@@ -11,4 +11,12 @@
     <string name="edad">Edad</string>
     <string name="registrar">Registrar</string>
     <string name="volver">Volver</string>
+    <string name="button_pelicula">Peliculas</string>
+    <string name="button_agregar">Agregar Pelicula</string>
+    <string name="edit_duracion">Duracion</string>
+    <string name="edit_synopsis">Synopsis</string>
+    <string name="edit_genero">Genero</string>
+    <string name="edit_anio">Año</string>
+    <string name="edit_director">Director</string>
+    <string name="edit_score">Score</string>
 </resources>

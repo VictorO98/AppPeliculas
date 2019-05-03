@@ -45,13 +45,13 @@ class ProfileActivity : AppCompatActivity() {
 
         //val imagenS = intent.getStringExtra("URI_IMA")
 
-
-
         //val imagen = Uri.parse(image)
         //imageProfile.setImageURI(imagen)
+    }
 
-
-
+    fun listMovies(view: View){
+        val intent = Intent(this, MovieListActivity::class.java)
+        startActivity(intent)
     }
 
     fun volverButton(view : View){
