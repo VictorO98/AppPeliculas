@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
+import android.widget.TextView
 import com.example.datastorage.R
 
 class RegisterMovieActivity : AppCompatActivity() {
@@ -27,6 +28,7 @@ class RegisterMovieActivity : AppCompatActivity() {
     }
 
     fun Register(view: View){
-
+        val nameMovie : TextView = findViewById<TextView>(R.id.nombre)
+        val durationMovie : TextView = findViewById<TextView>(R.id.duracionEdit)
     }
 }
